@@ -9,14 +9,14 @@ namespace Employee_Management_System
                 public static void Main(string[] args)
               
               {
+           //var serviceProvider = new ServiceCollection()
+           //    .AddDbContext<employeedbcontext>(options =>
+           //        options.UseSqlServer()).BuildServiceProvider();
 
-            // Configure Dependency Injection
-            var serviceProvider = new ServiceCollection()
-                .AddDbContext<employeedbcontext>(options =>
-                    options.UseSqlServer("Your_Connection_String_Here"))
-                .BuildServiceProvider();
-
-            var dbContext = serviceProvider.GetService<employeedbcontext>();
+        /*    var optionsBuilder = new DbContextOptionsBuilder<employeedbcontext>();
+            optionsBuilder.UseSqlServer("Server=SHIVA-ARUGULA-1;Database=EmployeeDB;Trusted_Connection=True;TrustServerCertificate=True;");
+*/
+            var dbContext = new employeedbcontext();
 
             Employee_Functionalities empFunc = new Employee_Functionalities(dbContext);
             Console.WriteLine("===========================");

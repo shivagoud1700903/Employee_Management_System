@@ -9,9 +9,7 @@ namespace Employee_Management_System
 {
     public class employeedbcontext:DbContext
     {
-        public employeedbcontext(DbContextOptions<employeedbcontext> options)
-      : base(options)
-        {}
+        
         public DbSet<Employee> Employees { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
